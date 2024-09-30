@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SabinGhet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 98vh;
+            background-color: lightgrey;
+            overflow-x: hidden;
+        }
+        header {
+            width: 100%;
+            max-width: 100vw;
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 22px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #6b8dfd;
+            border-radius: 5px;
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        nav a.active {
+            background-color: rgba(121, 114, 114, 0.459);
+            color: black;
+            border-radius: 5px;
+        }
+        nav a:not(:hover) {
+            opacity: 0.7;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons a {
+            margin-left: 10px;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .social-icons img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+        .ll {
+            margin-right: 40px;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .profile-circle {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tb1 {
+            height: 200px;
+            width: 800px;
+            font-weight: bold;
+            font-size: 120px;
+            font-family: 'Capriola', sans-serif;
+            margin-bottom: -60px;
+        }
+
+        .about-me-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            height: 70vh;
+            width: 140vh;
+            margin-top: 8%;
+        }
+
+        .about-me-text {
+            flex: 1;
+            padding-right: 20px;
+            font-size: 40px;
+            font-family: 'Capriola', sans-serif;
+        }
+
+        .about-me-image {
+            flex: 0 0 40%; 
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .about-me-image img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#tab1" id="tab1-link" class="active" onclick="showTab('tab1')">Main Page</a>
+            <a href="#tab2" id="tab2-link" onclick="showTab('tab2')">About Me</a>
+            <a href="#tab3" id="tab3-link" onclick="showTab('tab3')">CV</a>
+        </nav>
+        <div class="social-icons">
+            <a href="http://www.linkedin.com/in/sabin-ghet-1a276b32b" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/SabinG03" target="_blank" class="ll">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div id="tab1" class="tab-content active">
+            <div class="profile-container">
+                <div class="profile-circle">
+                    <img src="PP.png" alt="Profile Picture">
+                </div>
+                <div class="tb1">SABIN GHET</div>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <div class="about-me-container">
+                <div class="about-me-text" >
+                    <p>
+                        I'm driven by the desire to build and innovate. I'm seeking opportunities that allow me to apply my technical expertise in creative ways, whether it's through developing websites, software, or collaborative projects. Let's create something great together.
+                        <br/>
+                        <br/>
+                        I'm a proficient full-stack developer and also have experience in Java, PHP, and C++. You can find examples of my code and projects on my GitHub, linked in the top right corner.
+                    </p>
+                </div>
+                <div class="about-me-image">
+                    <img src="p2.png" alt="About Me Image">
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="tab3" class="tab-content">
+            <div class="aa">
+                <iframe src="SABINGHETCV.pdf" title="CV PDF" style="width: 200vh; height: 97vh; border: none;" zoom="5"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId + '-link').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
